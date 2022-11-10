@@ -24,7 +24,7 @@ namespace ApiLayerVet.Controllers
 
 
         [HttpGet]
-        [Route("api/Doctor/{doctorId}/Feedback/{appointmentId}")]
+        [Route("api/doctor/{doctorId}/feedback/{appointmentId}")]
         public IHttpActionResult GET_FEEDBACK(int doctorId,int appointmentId)
         {
 
@@ -40,7 +40,7 @@ namespace ApiLayerVet.Controllers
 
         }
         [HttpGet]
-        [Route("api/Doctor/{doctorId}/Feedback/async/{appointmentId}")]
+        [Route("api/doctor/{doctorId}/feedback/async/{appointmentId}")]
         public async Task<IHttpActionResult> GET_FEEDBACK_ASYNC(int doctorId,int appointmentId)
         {
             try
@@ -55,7 +55,7 @@ namespace ApiLayerVet.Controllers
 
         }
         [HttpPost]
-        [Route("api/Doctor/Feedback/{doctorId}")]
+        [Route("api/doctor/feedback/{doctorId}")]
         public IHttpActionResult POST_FEEDBACK([FromUri()] int doctorId, [FromBody()] Feedback feedback)
         {
             if (ModelState.IsValid)
@@ -84,7 +84,7 @@ namespace ApiLayerVet.Controllers
             }
         }
         [HttpPost]
-        [Route("api/Doctor/Feedback/async/{doctorId}")]
+        [Route("api/doctor/feedback/async/{doctorId}")]
         public async Task<IHttpActionResult> POST_FEEDBACK_ASYNC([FromUri()] int doctorId, [FromBody()] Feedback feedback)
         {
             if (ModelState.IsValid)
@@ -133,7 +133,7 @@ namespace ApiLayerVet.Controllers
                 return BadRequest("Doctor Id not available");
         }
         [HttpGet]
-        [Route("api/Doctors")]
+        [Route("api/doctors")]
         [EnableQuery]
         public IQueryable<Doctor> GetDoctors()
         {
@@ -141,7 +141,7 @@ namespace ApiLayerVet.Controllers
         }
 
         [HttpGet]
-        [Route("api/Doctors/async")]
+        [Route("api/doctors/async")]
         [EnableQuery]
         public async Task<IQueryable<Doctor>> GetDoctorsAsync()
         {
@@ -149,7 +149,7 @@ namespace ApiLayerVet.Controllers
 
             return data.AsQueryable();
         }
-        [Route("api/Doctor/{id}")]
+        [Route("api/doctor/{id}")]
         public IHttpActionResult PutDoctor(Doctor d, int id)
         {
             if (!ModelState.IsValid)
@@ -158,7 +158,7 @@ namespace ApiLayerVet.Controllers
                 return BadRequest("Doctor ID Invalid");
             return Ok();
         }
-        [Route("api/Doctor/Async/{id}")]
+        [Route("api/doctor/async/{id}")]
         public async Task<IHttpActionResult> PutDoctorAsync(Doctor d, int id)
         {
             if (!ModelState.IsValid)
