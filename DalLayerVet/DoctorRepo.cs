@@ -23,7 +23,7 @@ namespace DalLayerVet
             }
             else
             {
-                if ((from s in data.appointmentIds where s.appointmentId == appointmentId select s).ToList().Count == 0)
+                if ((from s in data.appointmentIds where s.appointmentIdByAppointmentModule == appointmentId select s).ToList().Count == 0)
                 {
                     throw new AppointmentIdNotFoundException("the given appointment id is not present");
                 }
@@ -52,7 +52,7 @@ namespace DalLayerVet
             }
             else
             {
-                if ((from s in data.appointmentIds where s.appointmentId == appointmentId select s).ToList().Count == 0)
+                if ((from s in data.appointmentIds where s.appointmentIdByAppointmentModule == appointmentId select s).ToList().Count == 0)
                 {
                     throw new AppointmentIdNotFoundException("the given appointment id is not present");
                 }
