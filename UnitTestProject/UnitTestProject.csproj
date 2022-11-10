@@ -88,6 +88,14 @@
       <Project>{81e3318d-dabe-481f-a5fa-5b651fdb0637}</Project>
       <Name>BussinessLayerVet</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DalLayerVet\DalLayerVet.csproj">
+      <Project>{CFDD16F5-0F67-442A-B677-9E87F4C97FAD}</Project>
+      <Name>DalLayerVet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{9E6C3F73-5B1F-46A0-A7B7-04008BA4F1A3}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{b7931d60-66ed-4914-b753-ec259cf801f9}</Project>
       <Name>Entities</Name>
