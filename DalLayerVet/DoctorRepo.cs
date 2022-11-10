@@ -133,28 +133,36 @@ namespace DalLayerVet
         }
         public bool AddAppointment(int doctorId, DoctorAppointment appointmentId)
         {
-            if (db.Doctors.Find(doctorId) != null)
+            var data = db.Doctors.Find(doctorId);
+            if (data == null)
             {
-                Doctor d = db.Doctors.Find(doctorId);
-                d.appointmentIds.Add(appointmentId);
+                throw new DoctorNotFoundException("doctor id not present");
+            }
+          else
+            {
+
+                data.appointmentIds.Add(appointmentId);
                 db.SaveChanges();
                 return true;
             }
-            else
-                return false;
+
 
         }
         public async Task<bool> AddAppointmentAsync(int doctorId, DoctorAppointment appointmentId)
         {
-            if (db.Doctors.Find(doctorId) != null)
+            var data = db.Doctors.Find(doctorId);
+            if (data == null)
+            {
+                throw new DoctorNotFoundException("doctor id not present");
+            }
+          else
             {
                 Doctor d = db.Doctors.Find(doctorId);
                 d.appointmentIds.Add(appointmentId);
                 await db.SaveChangesAsync();
                 return true;
             }
-            else
-                return false;
+            
         }
         public List<Doctor> GetDoctors()
         {

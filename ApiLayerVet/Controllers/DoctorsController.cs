@@ -113,7 +113,7 @@ namespace ApiLayerVet.Controllers
         }
         [HttpPost]
         [Route("api/Doctors/AssignAppointmentToDoctor/{doctorId}")]
-        public IHttpActionResult Post(int doctorId, DoctorAppointment appointmentId)
+        public IHttpActionResult PostAppointment(int doctorId, DoctorAppointment appointmentId)
         {
             bool response = dataProcessor.AddAppointment(doctorId, appointmentId);
             if (response)
@@ -124,7 +124,7 @@ namespace ApiLayerVet.Controllers
 
         [HttpPost]
         [Route("api/Doctors/AssignAppointmentToDoctor/async/{doctorId}")]
-        public async Task<IHttpActionResult> PostAppointment(int doctorId, DoctorAppointment appointmentId)
+        public async Task<IHttpActionResult> PostAppointmentAsync(int doctorId, DoctorAppointment appointmentId)
         {
             var response = await dataProcessor.AddAppointmentAsync(doctorId, appointmentId);
             if (response == true)
