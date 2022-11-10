@@ -45,17 +45,17 @@ namespace UnitTestProject
             IHttpActionResult actionResult = Controller.PostAppointment(d.doctorId, da);
             Assert.IsInstanceOfType(actionResult, typeof(BadRequestErrorMessageResult));
         }
-        [TestMethod]
-        public void Post_Appointment_Async_Invalid()
-        {
-            var MockRepo = new Mock<IDoctorDataProcessor>();
-            var Controller = new DoctorsController(MockRepo.Object);
-            Doctor d = new Doctor();
-            DoctorAppointment da = new DoctorAppointment();
-            da.appointmentIdByAppointmentModule = 16;
-            Task<IHttpActionResult> actionResult = Controller.PostAppointmentAsync(d.doctorId, da);
-            Assert.IsNotNull(actionResult);
-        }
+        //[TestMethod]
+        //public void Post_Appointment_Async_Invalid()
+        //{
+        //    var MockRepo = new Mock<IDoctorDataProcessor>();
+        //    var Controller = new DoctorsController(MockRepo.Object);
+        //    Doctor d = new Doctor();
+        //    DoctorAppointment da = new DoctorAppointment();
+        //    da.appointmentIdByAppointmentModule = 16;
+        //    Task<IHttpActionResult> actionResult = Controller.PostAppointmentAsync(d.doctorId, da);
+        //    Assert.IsNotNull(actionResult);
+        //}
         //[TestMethod]
         //public void Post_Appointment_Valid()
         //{
