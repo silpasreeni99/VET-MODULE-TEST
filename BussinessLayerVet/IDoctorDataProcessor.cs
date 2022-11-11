@@ -22,5 +22,8 @@ namespace BussinessLayerVet
         Task<bool> editDoctorAsync(Doctor d, int id);
         Doctor AddDoctor(DoctorDto dto);
         Task<Doctor> AddDoctorAsync(DoctorDto dto);
+        void DeleteAppointment(int doctorId, int appointmentIdByAppointModule);
+
+        
     }
 }

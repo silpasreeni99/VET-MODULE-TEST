@@ -216,6 +216,35 @@ namespace DalLayerVet
             await db.SaveChangesAsync();
         }
 
+        public void DeleteAppointment(int doctorId, int appointmentIdByAppointModule)
+        {
+            var Doct = db.Doctors.Find(doctorId);
+            if (Doct == null)
+                throw new DoctorNotFoundException("doctor not found to delete this appointment");
+            else
+            {
+                List<DoctorAppointment> appointmentObject = ((from f in Doct.appointmentIds where f.appointmentIdByAppointmentModule == appointmentIdByAppointModule select f)).ToList();
+                if (appointmentObject.Count()==0)
+                {
+                    throw new AppointmentToGivenDoctorNotFound("appointment does not exists to the doctor");
+                }
+                else
+                {
+                    Doct.appointmentIds.Remove(appointmentObject[0]);
+                    db.SaveChanges();
+
+                }
+                
+               
+
+            }
+        }
+
+        
+
+
+        
+
 
     }
 }

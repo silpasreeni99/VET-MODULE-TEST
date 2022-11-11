@@ -122,5 +122,19 @@ namespace BussinessLayerVet
             await repo.SaveDoctorAsync(doctor);
             return doctor;
         }
+
+        public void DeleteAppointment(int doctorId, int appointmentIdByAppointModule)
+        {
+            try
+            {
+                repo.DeleteAppointment(doctorId, appointmentIdByAppointModule);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        
     }
 }

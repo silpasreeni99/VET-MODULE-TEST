@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentIdNotFoundException.cs" />
+    <Compile Include="AppointmentToGivenDoctorNotFound.cs" />
     <Compile Include="DoctorNotFoundException.cs" />
     <Compile Include="FeedbackExitsException.cs" />
     <Compile Include="FeedbackNotPresentException.cs" />

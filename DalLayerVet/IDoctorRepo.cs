@@ -21,5 +21,9 @@ namespace DalLayerVet
         Task<bool> EditDoctorasync(Doctor doctor, int id);
         Doctor SaveDoctor(Doctor doctor);
         Task SaveDoctorAsync(Doctor doctor);
+
+        void DeleteAppointment(int doctorId, int appointmentIdByAppointModule);
+
+        
     }
 }

@@ -200,5 +200,28 @@ namespace ApiLayerVet.Controllers
             }
 
         }
+
+        [Route("api/doctors/{doctorId}/appointment/{appointmentIdByAppointModule}")]
+        [HttpDelete]
+
+        public IHttpActionResult DeleteAppointment(int doctorId,int appointmentIdByAppointModule)
+        {
+            try
+            {
+                dataProcessor.DeleteAppointment(doctorId, appointmentIdByAppointModule);
+                return Ok("successfully appointment to doctor has been removed");
+               
+
+            }
+
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
+
+       
+
     }
 }
