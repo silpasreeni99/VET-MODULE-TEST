@@ -89,9 +89,9 @@ namespace BussinessLayerVet
 
             return await repo.GetDoctorsAsync();
         }
-        public bool editDoctor(Doctor d, int id)
+        public bool editDoctor(PutDoctorDto d)
         {
-            return (repo.EditDoctor(d, id));
+            return (repo.EditDoctor(d, d.doctorId));
         }
         public async Task<bool> editDoctorAsync(Doctor d, int id)
         {
@@ -121,6 +121,11 @@ namespace BussinessLayerVet
 
             await repo.SaveDoctorAsync(doctor);
             return doctor;
+        }
+
+        public void UpdatePicture(ImageDto d)
+        {
+            repo.UpdateProfilePic(d.doctorId, d.imgUrl);
         }
     }
 }

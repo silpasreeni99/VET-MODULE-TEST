@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DTOs;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace DalLayerVet
         Task<bool> AddAppointmentAsync(int doctorId, DoctorAppointment appointmentId);
         List<Doctor> GetDoctors();
         Task<List<Doctor>> GetDoctorsAsync();
-        bool EditDoctor(Doctor doctor, int id);
+        bool EditDoctor(PutDoctorDto doctor, int id);
         Task<bool> EditDoctorasync(Doctor doctor, int id);
         Doctor SaveDoctor(Doctor doctor);
         Task SaveDoctorAsync(Doctor doctor);
+        void UpdateProfilePic(int id, string url);
     }
 }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoctorDto.cs" />
+    <Compile Include="ImageDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PutDoctorDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -145,12 +145,10 @@ namespace ApiLayerVet.Controllers
 
             return data.AsQueryable();
         }
-        [Route("api/doctor/{id}")]
-        public IHttpActionResult PutDoctor(Doctor d, int id)
+        [Route("api/doctor")]
+        public IHttpActionResult PutDoctor(PutDoctorDto d)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
-            if (!dataProcessor.editDoctor(d, id))
+            if (!dataProcessor.editDoctor(d))
                 return BadRequest("Doctor ID Invalid");
             return Ok();
         }
@@ -195,6 +193,13 @@ namespace ApiLayerVet.Controllers
                 return BadRequest(e.Message);
             }
 
+        }
+        [Route("api/doctorImage")]
+        [HttpPut]
+        public IHttpActionResult PutDoctorImage(ImageDto d)
+        {
+            dataProcessor.UpdatePicture(d);
+            return Ok();
         }
     }
 }

@@ -18,9 +18,10 @@ namespace BussinessLayerVet
         Task<bool> AddAppointmentAsync(int doctorId, DoctorAppointment appointmentId);
         List<Doctor> GetDoctors();
         Task<List<Doctor>> GetDoctorsAsync();
-        bool editDoctor(Doctor d, int id);
+        bool editDoctor(PutDoctorDto d);
         Task<bool> editDoctorAsync(Doctor d, int id);
         Doctor AddDoctor(DoctorDto dto);
         Task<Doctor> AddDoctorAsync(DoctorDto dto);
+        void UpdatePicture(ImageDto d);
     }
 }

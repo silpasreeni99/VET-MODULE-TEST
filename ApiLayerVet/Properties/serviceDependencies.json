@@ -6,7 +6,7 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:ApilayerVet",
+      "connectionId": "ConnectionStrings:ApiLayerVet_dbn",
       "dynamicId": null
     }
   }

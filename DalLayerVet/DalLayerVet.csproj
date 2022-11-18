@@ -62,6 +62,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{9e6c3f73-5b1f-46a0-a7b7-04008ba4f1a3}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{B7931D60-66ED-4914-B753-EC259CF801F9}</Project>
       <Name>Entities</Name>

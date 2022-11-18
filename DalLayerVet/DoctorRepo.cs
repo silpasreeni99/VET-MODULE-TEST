@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DTOs;
+using Entities;
 using Exceptions;
 using System;
 using System.Collections.Generic;
@@ -166,7 +167,7 @@ namespace DalLayerVet
             var list = await db.Doctors.ToListAsync();
             return list;
         }
-        public bool EditDoctor(Doctor doctor, int id)
+        public bool EditDoctor(PutDoctorDto doctor, int id)
         {
             var data = db.Doctors.Find(id);
             if (data == null)
@@ -216,6 +217,11 @@ namespace DalLayerVet
             await db.SaveChangesAsync();
         }
 
-
+        public void UpdateProfilePic(int id, string url)
+        {
+            var d=db.Doctors.Find(id);  
+            d.imgUrl = url;
+            db.SaveChanges();
+        }
     }
 }

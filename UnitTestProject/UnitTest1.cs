@@ -21,8 +21,8 @@ namespace UnitTestProject
         {
             var MockRepo = new Mock<IDoctorDataProcessor>();
             var Controller = new DoctorsController(MockRepo.Object);
-            Doctor d = new Doctor();
-            IHttpActionResult actionResult = Controller.PutDoctor(d, 4);
+            PutDoctorDto d = new PutDoctorDto();
+            IHttpActionResult actionResult = Controller.PutDoctor(d);
             Assert.IsInstanceOfType(actionResult, typeof(BadRequestErrorMessageResult));
         }
         [TestMethod]
