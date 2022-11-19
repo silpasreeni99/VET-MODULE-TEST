@@ -1,5 +1,5 @@
 # VET-MODULE
-Layer of Our Project:
+Layers of Our Project:
 *  ApiLayerVet
 *  BussinessLayerVet
 *  DalLayerVet
